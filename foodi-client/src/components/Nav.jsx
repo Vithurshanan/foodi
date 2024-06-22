@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import logo from "../../public/logo.png"
+import logo from "/logo.png"
 import { FiPhoneCall } from "react-icons/fi";
 
 const Nav = () => {
@@ -23,32 +23,48 @@ const Nav = () => {
       }, []);
     
     
-    const navItems = (
+      const navItems = (
         <>
-            <li><a>Home</a></li>
-            <li>
-                <details>
-                    <summary>Menu</summary>
-                    <ul className="p-2">
-                        <li><a>ALL</a></li>
-                        <li><a>Salad</a></li>
-                        <li><a>Pizza</a></li>
-                    </ul>
-                </details>
-            </li>
-            <li>
-                <details>
-                    <summary>Services</summary>
-                    <ul className="p-2">
-                        <li><a>Online Order</a></li>
-                        <li><a>Table Booking</a></li>
-                        <li><a>Order Tracking</a></li>
-                    </ul>
-                </details>
-            </li>
-            <li><a>Offers</a></li>
+          <li>
+            <a className="text-green" href='/'>Home</a>
+          </li>
+          <li tabIndex={0}>
+            <details>
+              <summary>Menu</summary>
+              <ul className="p-2">
+                <li>
+                  <a href="/menu">All</a>
+                </li>
+                <li>
+                  <a>Salad</a>
+                </li>
+                <li>
+                  <a>Pizza</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li tabIndex={0}>
+            <details>
+              <summary>Services</summary>
+              <ul className="p-2">
+                <li>
+                  <a>Online Order</a>
+                </li>
+                <li>
+                  <a>Table Booking</a>
+                </li>
+                <li>
+                  <a>Order Tracking</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a>Offers</a>
+          </li>
         </>
-    )
+      );
     return (
         <header className='max-w-screen-2xl container mx-auto fixed top-0 right-0 transition-all duration-300 ease-in-out'>
            <div className={`navbar xl:px-24 ${isSticky ? "shadow-md bg-white transition-all duration-300 ease-in-out" : "" }`}>
