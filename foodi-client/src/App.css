@@ -2,7 +2,7 @@
 
 body{
     font-family: "Inter", sans-serif;
-    background: white;
+    background-color: white;
 }
 header{
     z-index: 10001 !important;

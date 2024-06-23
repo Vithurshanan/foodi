@@ -8,9 +8,11 @@ export default {
     extend: {
       colors: {
         "green": "#39DB4A",
+        "black":"#737373",
+        "bl":"#000",
         "red": "#FF6868",
         "secondary": "#555",
-        "prigmayBG": "#FCFCFC"
+        "primaryBG": "#FCFCFC"
       }
     },
   },
