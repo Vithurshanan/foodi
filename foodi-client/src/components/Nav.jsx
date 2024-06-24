@@ -32,7 +32,7 @@ const Nav = () => {
   const navItems = (
     <>
       <li>
-        <a className="text-green">Home</a>
+        <a className="text-green" href="/">Home</a>
       </li>
       <li tabIndex={0}>
         <details>
