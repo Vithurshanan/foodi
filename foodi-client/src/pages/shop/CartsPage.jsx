@@ -3,8 +3,6 @@ import React from 'react'
 const CartsPage = () => {
     return (
         <div className="section-container">
-
-
             {/**banner */}
             <div className='section-container bg-gradient-to-r from-[#FAFAFA] from-0% to-[#FCFCFC] to-100%'>
                 <div className="py-36 flex flex-col  justify-center items-center gap-8">
@@ -12,9 +10,7 @@ const CartsPage = () => {
                         <h2 className="md:text-5xl text-4xl font-bold md:leading-snug leading-snug">
                             Items Added to the <span className="text-green">Cart</span>
                         </h2>
-
                     </div>
-
                 </div>
             </div>
 
@@ -63,7 +59,6 @@ const CartsPage = () => {
                         </tr>
                     
                     </tbody>
-                  
                 </table>
             </div>
         </div>

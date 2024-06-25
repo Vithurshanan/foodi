@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
-import defaultImg from "../../public/images/home/profile.jpg"
 
 const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -21,7 +20,6 @@ const Profile = () => {
       <div className="drawer drawer-end z-50">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          {/* Page content here */}
           <label
             htmlFor="my-drawer-4"
             className="drawer-button btn btn-ghost btn-circle avatar"

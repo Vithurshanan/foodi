@@ -25,7 +25,6 @@ const UpdateProfile = () => {
     const from = location.state?.from?.pathname || "/";
 
     const onSubmit = (data) => {
-        setLoading(true);
         const name = data.name;
         const photoURL = data.photoURL;
         updateUserProfile(name, photoURL)
