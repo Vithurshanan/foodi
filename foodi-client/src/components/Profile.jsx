@@ -1,19 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../contexts/AuthProvider";
 
 const Profile = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
-    logOut()
-      .then(() => {
-        // Sign-out successful, redirect to login or home page if necessary
-      })
-      .catch((error) => {
-        // Handle logout error
-        console.error("Logout Error:", error);
-      });
-  };
+    logOut().then(() => {
+      console.log("Sign-out successful.");
+    }).catch((error) => {
+      console.error("An error happened during logout:", error);
+    });
+  }
+
+  useEffect(() => {
+    console.log("User object: ", user);
+  }, [user]);
 
   return (
     <div>
@@ -25,22 +26,17 @@ const Profile = () => {
             className="drawer-button btn btn-ghost btn-circle avatar"
           >
             <div className="w-10 rounded-full">
-              {user?.photoURL ? (
-                <img alt="Profile" src={user.photoURL} />
+              {user && user.photoURL ? (
+                <img alt="profile" src={user.photoURL} />
               ) : (
-                <img alt="Default Profile" src={defaultImg} />
+                <img alt="default-profile" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
               )}
             </div>
           </label>
         </div>
         <div className="drawer-side">
-          <label
-            htmlFor="my-drawer-4"
-            aria-label="close sidebar"
-            className="drawer-overlay"
-          ></label>
-          <ul className="menu p-4 w-80 min-h-full bg-white text-base-content">
-            {/* Sidebar content here */}
+          <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
             <li>
               <a href="/update-profile">Profile</a>
             </li>
