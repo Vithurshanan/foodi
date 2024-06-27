@@ -168,14 +168,14 @@ const Menu = () => {
 
         {/* product card */}
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-4 ">
-          {currentItems.map((item) => (
-            <Cards key={item._id} item={item} />
+          {currentItems.map((item, index) => (
+            <Cards key={index} item={item} />
           ))}
         </div>
       </div>
 
        {/* Pagination */}
-       <div className="flex justify-center my-8">
+       <div className="flex justify-center my-8 flex-wrap gap-2">
         {Array.from({ length: Math.ceil(filteredItems.length / itemsPerPage) }).map((_, index) => (
           <button
             key={index + 1}
