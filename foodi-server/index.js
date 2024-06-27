@@ -10,32 +10,10 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Configuration
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.3uhfulu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
 
-let menuCollections;
-let cartCollections;
 
-async function run() {
-  try {
-    // Connect the client to the server
-    await client.connect();
-    console.log("MongoDB Connected");
 
-    // Database and Collections
-    const db = client.db("foodi-client");
-    menuCollections = db.collection("menu");
-    cartCollections = db.collection("cartItems");
 
-    // Indexing for fast query
-    await cartCollections.createIndex({ email: 1 });
 
     // All menu items operations
     app.get('/menu', async (req, res) => {
