@@ -67,7 +67,7 @@ const DashboardLayout = () => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 min-h-full bg-blue-50 text-base-content">
           {/* Sidebar content here */}
           <li>
             <Link to="/dashboard" className="flex justify-start mb-3">
@@ -112,7 +112,7 @@ const DashboardLayout = () => {
           }
         </ul>
       </div>
-    </div> : (loading ? <Login/>  : <div className="h-screen flex justify-center items-center"><Link to="/"><button className="btn bg-green text-white">Back to Home</button></Link></div>)
+    </div> : (loading ? <Login/> : <div className="h-screen flex justify-center items-center"><Link to="/"><button className="btn bg-green text-white">Back to Home</button></Link></div>)
     }
     </div>
   );

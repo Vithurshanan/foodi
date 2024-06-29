@@ -144,4 +144,4 @@ const UpdateMenu = () => {
   )
 }
 
-export default UpdateMenu;
+export default UpdateMenu

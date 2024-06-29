@@ -13,6 +13,7 @@ import AddMenu from "../pages/dashboard/admin/Addmenu";
 import ManageItems from "../pages/dashboard/admin/ManageItems";
 import UpdateMenu from "../pages/dashboard/admin/UpdateMenu";
 import Login from "../components/Login";
+import ManageBooking from "../pages/dashboard/admin/ManageBooking";
 
 const router = createBrowserRouter([
     {
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
   {
     path:"/dashboard",
     element:<PrivateRouter><DashboardLayout /></PrivateRouter>,
-    childern:[
+    children:[
       {
         path: '',
         element: <Dashboard/>
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: 'users', 
         element: <Users/>
+      },
+      {
+        path: 'manage-bookings', 
+        element: <ManageBooking />
       },
       {
         path: 'add-menu',

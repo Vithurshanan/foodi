@@ -1,4 +1,3 @@
-import React from 'react'
 import useAuth from './useAuth'
 import useAxiosSecure from './useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
@@ -12,6 +11,7 @@ const useAdmin = () => {
            const res = await axiosSecure.get(`users/admin/${user?.email}`)
            console.log(res.data)
             return res.data?.admin;
+        
         }
     })
   

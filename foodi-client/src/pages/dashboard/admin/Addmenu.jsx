@@ -5,7 +5,8 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from 'sweetalert2'
 
-const AddMenu = () => {
+
+const Addmenu = () => {
   const { register, handleSubmit, reset } = useForm();
   const axiosPublic = useAxiosPublic();
   const axiosSecure = useAxiosSecure();
@@ -56,28 +57,28 @@ const AddMenu = () => {
       {/* form here */}
       <div>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="form-control w-full">
+          <div className="form-control  w-full">
             <label className="label">
-              <span className="label-text">Recipe Name*</span>
+              <span className="label-text  ">Recipe Name*</span>
             </label>
             <input
               type="text"
               {...register("name", { required: true })}
               placeholder="Recipe Name"
-              className="input input-bordered w-full"
+              className="input input-bordered bg-white w-full"
             />
           </div>
 
           {/* 2nd row */}
           <div className="flex items-center gap-4">
             {/* categories */}
-            <div className="form-control w-full my-6">
+            <div className="form-control  w-full my-6">
               <label className="label">
-                <span className="label-text">Category*</span>
+                <span className="label-text ">Category*</span>
               </label>
               <select
                 {...register("category", { required: true })}
-                className="select select-bordered"
+                className="select bg-white select-bordered"
                 defaultValue="default"
               >
                 <option disabled value="default">
@@ -101,7 +102,7 @@ const AddMenu = () => {
                 type="number"
                 {...register("price", { required: true })}
                 placeholder="Price"
-                className="input input-bordered w-full"
+                className="input input-bordered bg-white w-full"
               />
             </div>
           </div>
@@ -113,17 +114,17 @@ const AddMenu = () => {
             </label>
             <textarea
               {...register("recipe", { required: true })}
-              className="textarea textarea-bordered h-24"
+              className="textarea bg-white textarea-bordered h-24"
               placeholder="Tell the worlds about your recipe"
             ></textarea>
           </div>
 
           {/* 4th row */}
-          <div className="form-control w-full my-6">
+          <div className="form-control  w-full my-6">
             <input
               {...register("image", { required: true })}
               type="file"
-              className="file-input w-full max-w-xs"
+              className="file-input bg-white border-black  w-full max-w-xs"
             />
           </div>
 
@@ -135,5 +136,4 @@ const AddMenu = () => {
     </div>
   );
 };
-
-export default AddMenu;
+export default Addmenu

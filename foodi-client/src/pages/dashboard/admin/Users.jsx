@@ -27,16 +27,16 @@ const Users = () => {
     })
   }
   return (
-    <div>
+    <div >
       <div className="flex items-center justify-between m-4">
         <h5>All Users</h5>
         <h5>Total Users: {users.length}</h5>
       </div>
 
       {/* table */}
-      <div>
-        <div className="overflow-x-auto">
-          <table className="table table-zebra md:w-[870px]">
+      <div >
+        <div className="overflow-x-auto ">
+          <table className="table   md:w-[870px]">
             {/* head */}
             <thead className="bg-green text-white rounded-lg">
               <tr>
@@ -45,11 +45,11 @@ const Users = () => {
                 <th>Email</th>
                 <th>Role</th>
                 <th>Action</th>
-              </tr>
+              </tr >
             </thead>
-            <tbody>
+            <tbody className="bg-white" >
               {users.map((user, index) => (
-                <tr key={index}>
+                <tr key={index} >
                   <th>{index + 1}</th>
                   <td>{user.name}</td>
                   <td>{user.email}</td>

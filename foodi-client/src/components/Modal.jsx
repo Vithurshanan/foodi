@@ -4,44 +4,69 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../contexts/AuthProvider";
 const Modal = () => {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-    
-    const {signUpWithGmail, login} = useContext(AuthContext);
-    const [errorMessage, setErrorMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    // redirecting to home page or specifig page
-    const location = useLocation();
-    const navigate = useNavigate();
-    const from = location.state?.from?.pathname || "/";
-  
+  const { signUpWithGmail, login } = useContext(AuthContext);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // redirecting to home page or specifig page
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+
 
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
-    // console.log(email, password)
-    login(email, password).then((result) => {
-      const user = result.user;
-      alert("Login successfull");
-      document.getElementById("my_modal_5").close()
-      navigate(from, {replace: true})
-    }).catch((error) => {
-      const errorMessage = error.message;
-      setErrorMessage("Provide a correct email and password!")
-    })
+    login(email, password)
+      .then((result) => {
+        // Signed in
+        const user = result.user;
+        const userInfor = {
+          name: data.name,
+          email: data.email,
+        };
+        axios
+          .post("http://localhost:8080/users", userInfor)
+          .then((response) => {
+            // console.log(response);
+            alert("Signin successful!");
+            navigate(from, { replace: true });
+          });
+        // console.log(user);
+        // ...
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        seterrorMessage("Please provide valid email & password!");
+      });
+    reset()
   };
 
-    // google signin
-    const handleLogin = () => {
-      signUpWithGmail().then((result) => {
+
+  // google signin
+  const handleRegister = () => {
+    signUpWithGmail()
+      .then((result) => {
         const user = result.user;
-        alert("Login successfull!")
-        navigate(from, {replace: true})
-      }).catch((error) => console.log(error))
-    }
+        const userInfor = {
+          name: result?.user?.displayName,
+          email: result?.user?.email,
+        };
+        axios
+          .post("http://localhost:8080/users", userInfor)
+          .then((response) => {
+            // console.log(response);
+            alert("Signin successful!");
+            navigate("/");
+          });
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <dialog id="my_modal_5" className="modal modal-middle sm:modal-middle">
       <div className="modal-box">
@@ -101,23 +126,23 @@ const Modal = () => {
               </Link>{" "}
             </p>
 
-            <button 
-            htmlFor="my_modal_5"
-            onClick={() => document.getElementById("my_modal_5").close()}
-            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            <button
+              htmlFor="my_modal_5"
+              onClick={() => document.getElementById("my_modal_5").close()}
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
             >✕</button>
           </form>
 
           {/* social sign in */}
           <div className="text-center space-x-3 mb-5">
-            <button className="btn btn-circle hover:bg-green hover:text-white" onClick={handleLogin}>
+            <button className="btn btn-circle hover:bg-green hover:text-white" onClick={handleRegister}>
               <FaGoogle />
             </button>
             <button className="btn btn-circle hover:bg-green hover:text-white">
               <FaFacebookF />
             </button>
             <button className="btn btn-circle hover:bg-green hover:text-white">
-            <FaGithub />
+              <FaGithub />
             </button>
           </div>
         </div>
