@@ -14,7 +14,7 @@ const Profile = () => {
   }
 
   useEffect(() => {
-    console.log("User object: ", user);
+    //console.log("User object: ", user);
   }, [user]);
 
   return (

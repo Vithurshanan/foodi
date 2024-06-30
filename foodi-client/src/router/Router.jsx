@@ -14,6 +14,7 @@ import ManageItems from "../pages/dashboard/admin/ManageItems";
 import UpdateMenu from "../pages/dashboard/admin/UpdateMenu";
 import Login from "../components/Login";
 import ManageBooking from "../pages/dashboard/admin/ManageBooking";
+import Payment from "../pages/shop/Payment";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path:"/cart-page",
         element: <CartsPage />
+      },
+      {
+        path:"/process-checkout",
+        element: <Payment />
       }
       ]
     },
