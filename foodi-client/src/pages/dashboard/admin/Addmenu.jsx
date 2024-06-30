@@ -13,7 +13,7 @@ const Addmenu = () => {
 
   // image hosting key
   const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-  // console.log(image_hosting_key)
+  //console.log(image_hosting_key)
   const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
   const onSubmit = async (data) => {
     // console.log(data)
@@ -28,14 +28,14 @@ const Addmenu = () => {
       const menuItem = {
         name: data.name,
         category: data.category,
-        price: parseFloat(data.price), 
+        price: parseFloat(data.price),
         recipe: data.recipe,
         image: hostingImg.data.data.display_url
       };
 
-      // console.log(menuItem);
+      //console.log(menuItem);
       const postMenuItem = axiosSecure.post('/menu', menuItem);
-      if(postMenuItem){
+      if (postMenuItem) {
         reset()
         Swal.fire({
           position: "top-end",

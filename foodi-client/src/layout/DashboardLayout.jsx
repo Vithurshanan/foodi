@@ -112,7 +112,7 @@ const DashboardLayout = () => {
           }
         </ul>
       </div>
-    </div> : (loading ? <Login/> : <div className="h-screen flex justify-center items-center"><Link to="/"><button className="btn bg-green text-white">Back to Home</button></Link></div>)
+    </div> : (loading ? <Login /> : <div className="h-screen flex justify-center items-center"><Link to="/"><button className="btn bg-green text-white">Back to Home</button></Link></div>)
     }
     </div>
   );

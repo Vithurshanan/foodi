@@ -8,7 +8,7 @@ import { FaUtensils } from 'react-icons/fa';
 
 const UpdateMenu = () => {
     const item = useLoaderData();
-    console.log(item);
+    //console.log(item);
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
@@ -104,7 +104,7 @@ const UpdateMenu = () => {
                 <span className="label-text">Price*</span>
               </label>
               <input
-                type="number"
+                type="text"
                 defaultValue={item.price}
                 {...register("price", { required: true })}
                 placeholder="Price"
