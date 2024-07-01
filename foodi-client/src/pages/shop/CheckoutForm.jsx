@@ -54,12 +54,6 @@ const CheckoutForm = ({ price, cart }) => {
         console.error('Error confirming card payment:', error.message);
         setCartError(error.message);
       } else {
-        //console.log('PaymentIntent:', paymentIntent);
-        setCartError('Payment successful!');
-        // Handle successful payment here
-      }
-      console.log(paymentIntent)
-      if(paymentIntent.status === "succeeded"){
         console.log(paymentIntent.id);
         setCartError(`Your transactionId is ${paymentIntent.id}`)
         //payment info data
