@@ -1,22 +1,20 @@
 const mongoose = require('mongoose');
-const { emit } = require('./Menu');
 const { Schema } = mongoose;
 
-
 const paymentSchema = new Schema({
-    transitionId: String,
+    transactionId: String,
     email: String,
     price: Number,
     status: String,
-    itemName: Array,
-    cartItems: Array,
-    menuItems: Array,
-    createAt: {
+    itemName: [String],   // Assuming itemName is an array of strings
+    cartItems: [Schema.Types.Mixed],   // Example: Array of mixed types
+    menuItems: [Schema.Types.ObjectId], // Example: Array of ObjectIds
+    createdAt: {
         type: Date,
         default: Date.now
     }
-})
+});
 
-const payment = mongoose.model('payment', paymentSchema);
+const Payment = mongoose.model('Payment', paymentSchema);
 
-module.exports = payment;
+module.exports = Payment;
