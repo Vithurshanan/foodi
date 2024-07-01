@@ -49,7 +49,7 @@ const Order = () => {
                   <tr>
                     <th>#</th>
                     <th>Order Date</th>
-                    
+                    <th>Transaction ID</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -62,7 +62,7 @@ const Order = () => {
                       <td>
                         {formatDate(item.createdAt)}
                       </td>
-                      
+                      <td>{item.transitionId}</td> 
                       <td className="flex items-center">
                         ${item.price}
                       </td>
