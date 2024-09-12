@@ -1,6 +1,6 @@
 Foodi: Food Delivery E-Commerce Website
 
-      Foodi is a modern food delivery e-commerce platform designed to connect customers with a wide range of food vendors. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js), Foodi offers a seamless and interactive experience for users looking to browse, order, and manage their food deliveries online.
+Foodi is a modern food delivery e-commerce platform designed to connect customers with a wide range of food vendors. Built using the MERN stack (MongoDB, Express.js, React.js, and Node.js), Foodi offers a seamless and interactive experience for users looking to browse, order, and manage their food deliveries online.
 
 Features
 User-Friendly Interface: Easy-to-navigate interface built with React.js, providing an intuitive browsing and ordering experience.
