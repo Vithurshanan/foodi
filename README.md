@@ -28,51 +28,54 @@ Technologies Used
 
 Installation
 
-        Prerequisites
+Prerequisites
                 Node.js (v14 or higher)
                 MongoDB (Local installation or Atlas cloud service)
-        Clone the Repository
-         git clone https://github.com/Vithurshanan/foodi.git
-         cd foodi
+
+                Clone the Repository
+                 git clone https://github.com/Vithurshanan/foodi.git
+                 cd foodi
         
-                Install Dependencies:
-                
+Install Dependencies:  
                 Client-Side:
+
                 cd foodi-client
                 npm install
                 
-                Server-Side:
+Server-Side:
+
                 cd ../foodi-server
                 npm install
                 
-                Environment Variables:
+Environment Variables:
                 Create a .env file in the foodi-server directory with the following variables:
                 
                         MONGO_URI=<Your MongoDB URI>
                         JWT_SECRET=<Your JWT Secret>
                         PORT=5000
                 
-                Run the Application:
+Run the Application:
                 
-                Start the Server
+Start the Server
+
                 cd foodi-server
                 npm start
                 
-                Start the Client
+Start the Client
                 In a new terminal window:
                 
                 cd foodi-client
                 npm start
         
         
-        The client-side application will be accessible at http://localhost:3000 and the server-side at http://localhost:5000.
+The client-side application will be accessible at http://localhost:3000 and the server-side at http://localhost:5000.
         
-        Usage
+Usage
         Browse: Explore various restaurants and food items on the homepage.
         Search: Use the search bar to find specific items or restaurants.
         Order: Add items to your cart, proceed to checkout, and place your order.
         Manage: Log in to manage your profile and view order history.
         
-        Contributing
+Contributing
         Feel free to contribute by opening issues, submitting pull requests, or providing feedback. Contributions are welcome to improve the functionality and user experience of Foodi.
         
